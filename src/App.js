@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Form from './components/Form';
+import UserTable from './components/UserTable';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
+
+  const users = [{ firstName:"Alimpan",lastName:"De", phone: 1234567890 }, { firstName:"Rohan",lastName:"Singh", phone:987654321 }];
+
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form />
     </div>
   );
 }
