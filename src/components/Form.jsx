@@ -25,12 +25,12 @@ function FormInput() {
     console.log(existingUser);
 
     if (existingUser) {
-      toast.error("User already exists");
+      alert("User already exists");
       return;
     }
     const res = addEntry(formData);
     if (res) {
-      toast.success("User added successfully");
+      alert("User added successfully");
     }
     setUsers(res);
 
